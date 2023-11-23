@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>pdf_test</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wkhtmltox\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DinkToPdf" Version="1.0.8" />
+    <PackageReference Include="IronPdf" Version="2023.11.8" />
+    <PackageReference Include="QuestPDF" Version="2023.10.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dll">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </None>
+	  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.dylib">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </None>
+	  <None Update="wkhtmltox\v0.12.4\32 bit\libwkhtmltox.so">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </None>
+	  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dll">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </None>
+	  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.dylib">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="wkhtmltox\v0.12.4\64 bit\libwkhtmltox.so">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+  </ItemGroup>
+
+</Project>

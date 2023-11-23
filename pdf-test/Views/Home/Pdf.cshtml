@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+@model pdf_test.Models.BatchPdfModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <style>
+        .img-background {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container padding-bottom-none">
+            <div class="pull-left navbar-logo img-background">
+                @*<img src="~/images/cashplus-bank-logo.png" alt="Cashplus Bank Logo" />*@
+                <img src="data:image/png;base64,@Model.Logo" />
+            </div>
+        </div>
+    </header>
+    <div class="content main">
+        
+
+
+        <main>
+            <div class="container">
+                <div class="row d-block no-gutters">
+                    <section>
+
+                        <h2>Batch</h2>
+                        <div class="partner-portal-table">
+                            <div class="full table-responsive">
+                                <table class="table">
+                                    <thead class="custom-style">
+                                        <tr>
+                                            <th style="color: red" class="col-xs-1">Originating Account Number</th>
+                                            <th class="col-xs-2">Originating Sort Code</th>
+                                            <th class="col-xs-2">Amount</th>
+                                            <th class="col-xs-2">Currency</th>
+                                            <th class="col-xs-2">PayeeAccountNumber</th>
+                                            <th class="col-xs-2">PayeeSortCode</th>
+                                            <th class="col-xs-1">Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            foreach (var payment in Model.Records)
+                                            {
+                                                <tr>
+                                                    <td>@payment.OriginatingAccountNumber</td>
+                                                    <td><div>@payment.OriginatingSortCode</div></td>
+                                                    <td><div>£@payment.Amount</div></td>
+                                                    <td><div>@payment.Currency</div></td>
+                                                    <td>@payment.PayeeAccountNumber</td>
+                                                    <td>@payment.PayeeSortCode</td>
+                                                    <td>@payment.Date.ToString("d") <span class="d-none d-sm-block">@payment.Date.ToString("t")</span></td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </section>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+</body>
+
+</html>
